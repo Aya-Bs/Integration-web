@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=Inknut+Antiqua:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inknut Antiqua', serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .left-section {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .product-image {
+            width: 50%;
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .price-details {
+            margin: 30px 0;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: #434c7b;
+            margin: 15px 0;
+        }
+
+        .total {
+            color: #d70654;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .delivery-notice {
+            border: 1px solid #d70654;
+            color: #d70654;
+            padding: 15px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 16px;
+        }
+
+        .see-commands {
+            display: block;
+            text-align: center;
+            color: #1f2544;
+            text-decoration: underline;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        .right-section {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #1f2544;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 16px;
+            font-family: 'Inria Sans', sans-serif;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 15px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 15px;
+            font-size: 18px;
+            transition: opacity 0.2s;
+            font-family: 'Inria Sans', sans-serif;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-primary {
+            background-color: #1f2544;
+        }
+
+        .btn-secondary {
+            background-color: #434c7b;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-section, .right-section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="left-section">
+            <div class="menu-icon">☰</div>
+            
+            <img src="image.jpg" alt="Tasse à café damier" class="product-image">
+            
+            <div class="price-details">
+                <div class="price-row">
+                    <span>Prix</span>
+                    <span>29 DT</span>
+                </div>
+                <div class="price-row">
+                    <span>Livraison</span>
+                    <span>7 DT</span>
+                </div>
+                <div class="separator"></div>
+                <div class="price-row total">
+                    <span>Total</span>
+                    <span>36 DT</span>
+                </div>
+            </div>
+
+            <div class="delivery-notice">
+                Your product will be delivered within 3 days
+            </div>
+
+            <a href="#" class="see-commands">See commands</a>
+        </section>
+
+        <section class="right-section">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" value="Sarra Sahli" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" value="El Ghzela, Ariana Assoghra" readonly>
+            </div>
+
+            <div class="form-group">
+                <label>Phone number</label>
+                <input type="tel" placeholder="">
+            </div>
+
+            <button class="btn btn-primary">Payement</button>
+            <button class="btn btn-secondary">Modify the delivery date</button>
+        </section>
+    </div>
+</body>
+</html>

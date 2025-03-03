@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Time Selection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&family=Inknut+Antiqua:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inknut Antiqua', serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .calendar-section {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .calendar {
+            border: 2px solid #1f2544;
+            border-radius: 15px;
+            padding: 20px;
+            flex: 1;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .calendar-title {
+            font-size: 24px;
+            color: #1f2544;
+        }
+
+        .calendar-nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            color: #1f2544;
+            font-size: 24px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .weekday {
+            text-align: center;
+            color: #e493b3;
+            font-size: 14px;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        .day {
+            aspect-ratio: 1;
+            background-color: #e493b3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .day.selected {
+            background-color: #1f2544;
+        }
+
+        .time-section {
+            flex: 1;
+        }
+
+        .time-group {
+            margin-bottom: 30px;
+        }
+
+        .time-label {
+            font-size: 24px;
+            color: #1f2544;
+            margin-bottom: 10px;
+        }
+
+        .time-input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .time-input {
+            width: 60px;
+            height: 60px;
+            border: 2px solid #1f2544;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 24px;
+            font-family: 'Inria Sans', sans-serif;
+        }
+
+        .time-separator {
+            font-size: 24px;
+            color: #1f2544;
+        }
+
+        .am-pm {
+            width: 60px;
+            height: 60px;
+            background-color: #1f2544;
+            border-radius: 8px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .am-pm span {
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inria Sans', sans-serif;
+            cursor: pointer;
+        }
+
+        .am-pm span.active {
+            background-color: #434c7b;
+        }
+
+        .chosen-date {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .chosen-date-label {
+            font-size: 24px;
+            color: #1f2544;
+            margin-bottom: 10px;
+        }
+
+        .chosen-date-value {
+            color: #d70654;
+            font-size: 18px;
+        }
+
+        .confirm-btn {
+            background-color: #1f2544;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Inria Sans', sans-serif;
+            transition: opacity 0.2s;
+        }
+
+        .confirm-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="calendar-section">
+            <div class="calendar">
+                <div class="calendar-header">
+                    <h2 class="calendar-title">February 2025</h2>
+                    <div class="calendar-nav">
+                        <button class="nav-btn">&#10094;</button>
+                        <button class="nav-btn">&#10095;</button>
+                    </div>
+                </div>
+                <div class="weekdays">
+                    <div class="weekday">MO</div>
+                    <div class="weekday">TU</div>
+                    <div class="weekday">WE</div>
+                    <div class="weekday">TH</div>
+                    <div class="weekday">FR</div>
+                    <div class="weekday">SA</div>
+                    <div class="weekday">SU</div>
+                </div>
+                <div class="days">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div class="day">8</div>
+                    <div class="day">9</div>
+                    <div class="day">10</div>
+                    <div class="day selected">11</div>
+                    <div class="day">12</div>
+                    <div class="day">13</div>
+                    <div class="day">14</div>
+                    <div class="day">16</div>
+                    <div class="day">17</div>
+                    <div class="day">18</div>
+                    <div class="day">19</div>
+                    <div class="day">20</div>
+                    <div class="day">21</div>
+                    <div class="day">22</div>
+                    <div class="day">23</div>
+                    <div class="day">24</div>
+                    <div class="day">25</div>
+                    <div class="day">26</div>
+                    <div class="day">27</div>
+                    <div class="day">28</div>
+                    <div class="day">29</div>
+                </div>
+            </div>
+
+            <div class="time-section">
+                <div class="time-group">
+                    <div class="time-label">From</div>
+                    <div class="time-input-group">
+                        <input type="text" class="time-input" value="7" readonly>
+                        <span class="time-separator">:</span>
+                        <input type="text" class="time-input" value="00" readonly>
+                        <div class="am-pm">
+                            <span class="active">AM</span>
+                            <span>PM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="time-group">
+                    <div class="time-label">To</div>
+                    <div class="time-input-group">
+                        <input type="text" class="time-input" value="8" readonly>
+                        <span class="time-separator">:</span>
+                        <input type="text" class="time-input" value="00" readonly>
+                        <div class="am-pm">
+                            <span class="active">AM</span>
+                            <span>PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chosen-date">
+            <div class="chosen-date-label">Chosen date</div>
+            <div class="chosen-date-value">11/02/2025 between 7:00 and 8:00</div>
+        </div>
+
+        <button class="confirm-btn">Confirm</button>
+    </div>
+</body>
+</html>

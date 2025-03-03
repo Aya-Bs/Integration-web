@@ -4,7 +4,22 @@ module.exports = {
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}", "./src/**/*.{html,js}", "*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
+      width: {
+        button: "348px",
+      },
+      height: {
+        button: "85px",
+      },
       colors: {
+        // Définir les couleurs personnalisées ici
+        'navy': "#001f3f", // Couleur navy
+        'navy-light': "#003366", // Couleur navy-light
+        cream: "#FFFDEB", // Couleur cream
+        pink: "#E493B3", // Couleur pink
+        accent: "#D70654", // Couleur accent
+        "yellow-star": "#FFCC00", // Couleur yellow-star
+        "gray-light": "#E8EAED", // Couleur gray-light
+        
         pink: {
           100: "#ffebee",
           200: "#ffcdd2",
@@ -27,7 +42,6 @@ module.exports = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -60,6 +74,7 @@ module.exports = {
       fontFamily: {
         inknut: ['"Inknut Antiqua"', "serif"],
         sans: ["Inria Sans", "sans-serif"],
+        inria: ["Inria Sans", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -69,5 +84,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
-
+};
