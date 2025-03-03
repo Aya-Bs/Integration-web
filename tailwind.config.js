@@ -19,7 +19,8 @@ module.exports = {
         accent: "#D70654", // Couleur accent
         "yellow-star": "#FFCC00", // Couleur yellow-star
         "gray-light": "#E8EAED", // Couleur gray-light
-        
+        customPrimary: '#1F2544',
+        customSecondary: '#434C7B',
         pink: {
           100: "#ffebee",
           200: "#ffcdd2",

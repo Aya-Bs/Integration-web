@@ -11,17 +11,17 @@
     <link href="/public/style2.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles.css">
     <link href="/public/output.css" rel="stylesheet">
-<head/>
+</head>
 <body class="font-inria">
 
-      <!-- Header -->
-  <header class="header">
-    <div class="header-content">
-        <div class="logo">
-            <img src="/images/Aura.png" alt="Aura Logo">
-        </div>
-        
-        <!-- Updated Navigation Menu for both pages -->
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="/images/Aura.png" alt="Aura Logo">
+            </div>
+            
+            <!-- Updated Navigation Menu for both pages -->
             <nav class="nav-menu">
                 <ul class="flex gap-10">
                     <li><a href="index.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Home</a></li>
@@ -38,86 +38,88 @@
                 <a href="#" aria-label="Cart" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-shopping-cart"></i></a>
                 <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
             </div>
-</header>
+        </div>
+    </header>
+
     <!-- Conteneur principal avec marges symétriques et centrage -->
-    <div class="container max-w-4xl w-full mx-auto px-6 flex flex-col gap-10">
+    <div class="container mx-auto px-4 py-8 flex flex-col items-center">
         <!-- Section Calendrier et Heure -->
-        <div class="calendar-section flex flex-col md:flex-row justify-between gap-10">
+        <div class="flex flex-col lg:flex-row justify-center items-start gap-16 w-full max-w-[1000px]">
             <!-- Calendrier -->
-            <div class="calendar border-2 border-[#1f2544] rounded-lg p-5 w-full md:w-1/2">
-                <div class="calendar-header flex justify-between items-center mb-5">
-                    <h2 class="calendar-title text-2xl text-[#1f2544]">February 2025</h2>
-                    <div class="calendar-nav flex gap-2">
-                        <button class="nav-btn text-2xl text-[#1f2544] bg-transparent border-none cursor-pointer">&#10094;</button>
-                        <button class="nav-btn text-2xl text-[#1f2544] bg-transparent border-none cursor-pointer">&#10095;</button>
+            <div class="border-2 border-[#1f2544] rounded-lg p-5 w-full max-w-[450px]">
+                <div class="flex justify-between items-center mb-5">
+                    <h2 class="text-2xl text-[#1f2544] font-medium">February 2025</h2>
+                    <div class="flex gap-4">
+                        <button class="text-2xl text-[#1f2544]">&#10094;</button>
+                        <button class="text-2xl text-[#1f2544]">&#10095;</button>
                     </div>
                 </div>
-                <div class="weekdays grid grid-cols-7 gap-2 mb-2">
-                    <div class="weekday text-center text-sm text-[#e493b3]">MO</div>
-                    <div class="weekday text-center text-sm text-[#e493b3]">TU</div>
-                    <div class="weekday text-center text-sm text-[#e493b3]">WE</div>
-                    <div class="weekday text-center text-sm text-[#e493b3]">TH</div>
-                    <div class="weekday text-center text-sm text-[#e493b3]">FR</div>
-                    <div class="weekday text-center text-sm text-[#e493b3]">SA</div>
-                    <div class="weekday text-center text-sm text-[#e493b3]">SU</div>
+                <div class="grid grid-cols-7 gap-2 mb-2">
+                    <div class="text-center text-sm text-[#e493b3] font-medium">MO</div>
+                    <div class="text-center text-sm text-[#e493b3] font-medium">TU</div>
+                    <div class="text-center text-sm text-[#e493b3] font-medium">WE</div>
+                    <div class="text-center text-sm text-[#e493b3] font-medium">TH</div>
+                    <div class="text-center text-sm text-[#e493b3] font-medium">FR</div>
+                    <div class="text-center text-sm text-[#e493b3] font-medium">SA</div>
+                    <div class="text-center text-sm text-[#e493b3] font-medium">SU</div>
                 </div>
-                <div class="days grid grid-cols-7 gap-2">
+                <div class="grid grid-cols-7 gap-2">
                     <!-- Jours du mois -->
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">1</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">2</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">3</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">4</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">5</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">6</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">7</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">8</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">9</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">10</div>
-                    <div class="day aspect-square bg-[#1f2544] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">11</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">12</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">13</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">14</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">16</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">17</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">18</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">19</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">20</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">21</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">22</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">23</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">24</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">25</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">26</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">27</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">28</div>
-                    <div class="day aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white text-lg cursor-pointer">29</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">1</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">2</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">3</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">4</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">5</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">6</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">7</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">8</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">9</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">10</div>
+                    <div class="aspect-square bg-[#1f2544] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">11</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">12</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">13</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">14</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">16</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">17</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">18</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">19</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">20</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">21</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">22</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">23</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">24</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">25</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">26</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">27</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">28</div>
+                    <div class="aspect-square bg-[#e493b3] rounded-lg flex items-center justify-center text-white font-medium cursor-pointer">29</div>
                 </div>
             </div>
 
             <!-- Section Heure -->
-            <div class="time-section w-full md:w-1/2">
-                <div class="time-group mb-8">
-                    <div class="time-label text-2xl text-[#1f2544] mb-2">From</div>
-                    <div class="time-input-group flex items-center gap-2">
-                        <input type="text" class="time-input w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl font-inria-sans" value="7" readonly>
-                        <span class="time-separator text-2xl text-[#1f2544]">:</span>
-                        <input type="text" class="time-input w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl font-inria-sans" value="00" readonly>
-                        <div class="am-pm w-16 h-16 bg-[#1f2544] rounded-lg text-white flex flex-col overflow-hidden">
-                            <span class="active h-1/2 flex items-center justify-center font-inria-sans cursor-pointer bg-[#434c7b]">AM</span>
-                            <span class="h-1/2 flex items-center justify-center font-inria-sans cursor-pointer">PM</span>
+            <div class="w-full lg:w-auto flex flex-col justify-center">
+                <div class="mb-10">
+                    <div class="text-2xl text-[#1f2544] font-medium mb-4">From</div>
+                    <div class="flex items-center gap-2">
+                        <input type="text" class="w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl" value="7" readonly>
+                        <span class="text-2xl text-[#1f2544]">:</span>
+                        <input type="text" class="w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl" value="00" readonly>
+                        <div class="w-16 h-16 bg-[#1f2544] rounded-lg text-white flex flex-col overflow-hidden">
+                            <div class="h-1/2 flex items-center justify-center bg-[#434c7b] cursor-pointer">AM</div>
+                            <div class="h-1/2 flex items-center justify-center cursor-pointer">PM</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="time-group mb-8">
-                    <div class="time-label text-2xl text-[#1f2544] mb-2">To</div>
-                    <div class="time-input-group flex items-center gap-2">
-                        <input type="text" class="time-input w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl font-inria-sans" value="8" readonly>
-                        <span class="time-separator text-2xl text-[#1f2544]">:</span>
-                        <input type="text" class="time-input w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl font-inria-sans" value="00" readonly>
-                        <div class="am-pm w-16 h-16 bg-[#1f2544] rounded-lg text-white flex flex-col overflow-hidden">
-                            <span class="active h-1/2 flex items-center justify-center font-inria-sans cursor-pointer bg-[#434c7b]">AM</span>
-                            <span class="h-1/2 flex items-center justify-center font-inria-sans cursor-pointer">PM</span>
+                <div class="mb-10">
+                    <div class="text-2xl text-[#1f2544] font-medium mb-4">To</div>
+                    <div class="flex items-center gap-2">
+                        <input type="text" class="w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl" value="8" readonly>
+                        <span class="text-2xl text-[#1f2544]">:</span>
+                        <input type="text" class="w-16 h-16 border-2 border-[#1f2544] rounded-lg text-center text-2xl" value="00" readonly>
+                        <div class="w-16 h-16 bg-[#1f2544] rounded-lg text-white flex flex-col overflow-hidden">
+                            <div class="h-1/2 flex items-center justify-center bg-[#434c7b] cursor-pointer">AM</div>
+                            <div class="h-1/2 flex items-center justify-center cursor-pointer">PM</div>
                         </div>
                     </div>
                 </div>
@@ -125,14 +127,18 @@
         </div>
 
         <!-- Date choisie -->
-        <div class="chosen-date text-center my-5">
-            <div class="chosen-date-label text-2xl text-[#1f2544] mb-2">Chosen date</div>
-            <div class="chosen-date-value text-lg text-[#d70654]">11/02/2025 between 7:00 and 8:00</div>
+        <div class="mt-10 mb-10 w-full max-w-[450px]">
+            <div class="text-center bg-white rounded-lg shadow-sm p-4">
+                <div class="text-2xl text-[#1f2544] font-medium mb-2">Chosen date</div>
+                <div class="text-[#d70654] text-lg">11/02/2025 between 7:00 and 8:00</div>
+            </div>
         </div>
 
         <!-- Bouton de confirmation -->
-        <button class="confirm-btn bg-[#1f2544] text-white border-none rounded-lg py-5 text-lg w-full font-inria-sans cursor-pointer transition-opacity hover:opacity-90">Confirm</button>
+        <button onclick="window.location.href='PagePayementApres.html'" class="bg-[#1f2544] text-white rounded-lg py-4 text-lg w-full max-w-[450px] font-medium cursor-pointer hover:bg-[#1f2544]/90">
+            Confirm</button>
     </div>
+
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
