@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/public/style2.css">
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body class="font-inknut">
+    <!-- Navbar -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="/images/Aura.png" alt="Aura Logo">
+            </div>
+            
+            <!-- Updated Navigation Menu for both pages -->
+                <nav class="nav-menu">
+                    <ul class="flex gap-10">
+                        <li><a href="index.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Home</a></li>
+                        <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Categories</a></li>
+                        <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Commands</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Updated Header Icons -->
+                <div class="flex items-center gap-6">
+                    <a href="#" aria-label="Search" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-search"></i></a>
+                    <a href="#" aria-label="Favorites" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-heart"></i></a>
+                    <a href="#" aria-label="Cart" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-shopping-cart"></i></a>
+                    <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
+                </div>
+    </header>
+
+<!-- Hero Section -->
+<section class="relative h-screen overflow-hidden">
+    <!-- Gradient background -->
+    <div class="absolute inset-0 z-0"
+         style="background-image: linear-gradient(to bottom, #E493B3 13%, #F1C9D9 72%, #FFFFFF 100%);">
+    </div>
+    
+    <!-- Content wrapper with no container constraints -->
+    <div class="relative z-10 h-full flex items-center">
+        <!-- Image Section - Absolutely positioned to left edge -->
+        <div class="absolute left-0 h-full w-3/5">
+            <img src="/images/Banner-image.png" 
+                 alt="Collection of decorative patches and stickers" 
+                 class="h-full w-full object-contain object-left scale-125">
+        </div>
+
+        <!-- Text Content - Positioned relative to maintain layout -->
+        <div class="ml-auto w-2/5 flex flex-col items-center justify-center space-y-8 pr-20">
+            <h1 class="font-['Inknut_Antiqua'] text-[#1F2544] text-6xl font-bold leading-tight text-center">
+                Dream It,<br>
+                Shop It,<br>
+                Love It!
+            </h1>
+            
+            <p class="font-['Inria_Sans'] text-[#434C7B] text-xl text-center max-w-md">
+                Personnalise your products,<br>for the best prices
+            </p>
+
+            <button class="bg-[#1F2544] text-white font-['Inknut_Antiqua'] text-lg px-10 py-4 rounded-full hover:bg-opacity-90 transition-all" >
+                Personnalise
+            </button>
+        </div>
+    </div>
+</section>
+    
+    <!-- Search Section -->
+    <div class="mb-8 mx-4 sm:mx-8 md:mx-16 lg:mx-24">
+        <div class="bg-primary rounded-full flex items-center justify-between px-6 py-3 mt-8">
+            <input type="text" placeholder="Type product" class="bg-transparent text-white placeholder-white/80 flex-1 outline-none">
+            <div class="flex items-center gap-4 text-white">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Section -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[#FF0066] font-bold text-2xl mb-6">Shop Categories</h2>
+            <div class="grid grid-cols-5 gap-4 justify-items-center">
+                <div class="flex flex-col items-center">
+                    <div class="bg-navy-700 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-home text-white"></i>
+                    </div>
+                    <span class="text-navy-800 text-sm">Decor</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-navy-700 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-gem text-white"></i>
+                    </div>
+                    <span class="text-navy-800 text-sm">Jewelry</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-navy-700 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-shopping-bag text-white"></i>
+                    </div>
+                    <span class="text-navy-800 text-sm">Bags</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-navy-700 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-coffee text-white"></i>
+                    </div>
+                    <span class="text-navy-800 text-sm">Cups</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="bg-navy-700 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-2">
+                        <i class="fas fa-tshirt text-white"></i>
+                    </div>
+                    <span class="text-navy-800 text-sm">Clothes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Bestsellers Section -->
+<section class="py-8">
+    <div class="container mx-auto px-4">
+        <h2 class="text-[#FF0066] font-bold text-2xl mb-6">Bestsellers</h2>
+        <div class="bg-[#FFE2E2] rounded-3xl px-6 py-4">
+            <div class="flex items-center gap-9">
+                <!-- Product 1 -->
+                <div class="w-44">
+                    <div class="bg-white rounded-2xl p-3 shadow-md mb-2">
+                        <img src="/images/beads-necklace.png" alt="Floral Vase" class="w-full aspect-square object-contain">
+                    </div>
+                    <div class="flex justify-between items-center bg-white rounded-xl px-3 py-1.5 shadow-sm">
+                        <span class="font-semibold text-navy-800">35DT</span>
+                        <span class="text-pink-500">›</span>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="w-44">
+                    <div class="bg-white rounded-2xl p-3 shadow-md mb-2">
+                        <img src="/images/checkered-cup.png" alt="Jewelry Stand" class="w-full aspect-square object-contain">
+                    </div>
+                    <div class="flex justify-between items-center bg-white rounded-xl px-3 py-1.5 shadow-sm">
+                        <span class="font-semibold text-navy-800">42DT</span>
+                        <span class="text-pink-500">›</span>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="w-44">
+                    <div class="bg-white rounded-2xl p-3 shadow-md mb-2">
+                        <img src="/images/geometric-cup.png" alt="Heart Bowl" class="w-full aspect-square object-contain">
+                    </div>
+                    <div class="flex justify-between items-center bg-white rounded-xl px-3 py-1.5 shadow-sm">
+                        <span class="font-semibold text-navy-800">35DT</span>
+                        <span class="text-pink-500">›</span>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="w-44">
+                    <div class="bg-white rounded-2xl p-3 shadow-md mb-2">
+                        <img src="/images/stars-cup.png" alt="Pearl Necklace" class="w-full aspect-square object-contain">
+                    </div>
+                    <div class="flex justify-between items-center bg-white rounded-xl px-3 py-1.5 shadow-sm">
+                        <span class="font-semibold text-navy-800">25DT</span>
+                        <span class="text-pink-500">›</span>
+                    </div>
+                </div>
+
+                <!-- Product 5 (New) -->
+                <div class="w-44">
+                    <div class="bg-white rounded-2xl p-3 shadow-md mb-2">
+                        <img src="/images/geometric-cup.png" alt="New Product" class="w-full aspect-square object-contain">
+                    </div>
+                    <div class="flex justify-between items-center bg-white rounded-xl px-3 py-1.5 shadow-sm">
+                        <span class="font-semibold text-navy-800">30DT</span>
+                        <span class="text-pink-500">›</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrow -->
+                <a href="products.html">
+                <button class="flex-none bg-pink-200 hover:bg-pink-300 rounded-full p-2.5 transition-colors -mr-2">
+                    <i class="fas fa-chevron-right text-pink-500 text-sm"></i>
+                </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-12 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-[#FF0066] font-bold text-2xl mb-6">Customer Reviews</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-[#FFE8E8] rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] min-h-[280px] flex flex-col items-center justify-center">
+          <div class="flex gap-2 mb-8"> <!-- Increased gap between stars -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            <!-- Repeat star SVG 4 more times -->
+          </div>
+          <p class="text-center text-[#464B8A] mb-8 text-lg font-['Inria_Sans'] leading-relaxed">
+            Excellent service, high quality products, very satisfied with my experience
+          </p>
+          <div class="text-center font-bold text-[#464B8A] text-xl font-['Inria_Sans']">
+            Farah Sayari
+          </div>
+        </div>
+  
+        <div class="bg-[#FFE8E8] rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.12)] min-h-[280px] flex flex-col items-center justify-center">
+          <div class="flex gap-2 mb-8"> 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-[#FF0066]" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+          </div>
+          <p class="text-center text-[#464B8A] mb-8 text-lg font-['Inria_Sans'] leading-relaxed">
+            Bought a gift for my friend and she was very happy. Nice products and creative people. Keep Going!
+          </p>
+          <div class="text-center font-bold text-[#464B8A] text-xl font-['Inria_Sans']">
+            Ahmed
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Why Choose us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Project management</a></li>
+                    <li><a href="#">Time tracker</a></li>
+                    <li><a href="#">Time schedule</a></li>
+                    <li><a href="#">Lead generate</a></li>
+                    <li><a href="#">Remote Collaboration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h2>Aura</h2>
+                <h4>Subscribe to our Newsletter</h4>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your Email">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+</body>
+</html>
+
