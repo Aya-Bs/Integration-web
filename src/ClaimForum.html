@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>AURA - File a Complaint</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/public/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .animate-fadeIn {
+        animation: fadeIn 0.5s ease-out;
+      }
+      
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .text-gradient {
+        background: linear-gradient(to right, #ec4899, #f472b6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      .glow-effect {
+        box-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+      }
+      
+      .hover-glow:hover {
+        box-shadow: 0 0 20px rgba(236, 72, 153, 0.7);
+      }
+      
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(0.5);
+        cursor: pointer;
+      }
+      
+      select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+      }
+
+      @media (max-width: 640px) {
+        .complaint-card {
+          width: 100%;
+          padding: 1rem;
+        }
+      }
+
+      main {
+        flex: 1;
+      }
+      
+      /* Custom navbar styles */
+      .header {
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid #fbcfe8;
+        padding: 0.75rem 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        height: auto;
+        max-height: 70px;
+      }
+      
+      .header-content {
+        width: 100%;
+        max-width: 80rem;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .logo {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      
+      .logo img {
+        max-height: 40px;
+        width: auto;
+      }
+      
+      .nav-menu ul {
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .nav-menu li {
+        list-style: none;
+      }
+      
+      .nav-menu a {
+        color: #4b5563;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+      }
+      
+      .nav-menu a:hover, .nav-menu a.active {
+        color: #ec4899;
+      }
+      
+      .header-icons {
+        display: flex;
+        gap: 1.5rem;
+      }
+      
+      .header-icons a {
+        color: #4b5563;
+        transition: color 0.3s;
+        font-size: 0.95rem;
+      }
+      
+      .header-icons a:hover {
+        color: #ec4899;
+      }
+      
+      /* Mobile menu styles */
+      .mobile-menu-button {
+        display: none;
+      }
+      
+      @media (max-width: 768px) {
+        .nav-menu, .header-icons {
+          display: none;
+        }
+        
+        .mobile-menu-button {
+          display: block;
+          color: #4b5563;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
+        
+        .mobile-menu {
+          position: absolute;
+          top: 4rem;
+          left: 0;
+          right: 0;
+          background-color: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid #fbcfe8;
+          padding: 1rem;
+          z-index: 50;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu ul {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        .mobile-menu-icons {
+          display: flex;
+          justify-content: space-around;
+          padding-top: 1rem;
+          border-top: 1px solid #fbcfe8;
+          margin-top: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navbar -->
+   <!-- Navbar -->
+   <header class="header">
+    <div class="header-content">
+        <div class="logo">
+            <img src="/images/Aura.png" alt="Aura Logo">
+        </div>
+        
+        <!-- Updated Navigation Menu for both pages -->
+            <nav class="nav-menu">
+                <ul class="flex gap-10">
+                    <li><a href="index.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Home</a></li>
+                    <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Categories</a></li>
+                    <li><a href="ClaimOptions.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Contact </a > </li>
+                    <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Commands</a></li>
+                </ul>
+            </nav>
+
+            <!-- Updated Header Icons -->
+            <div class="flex items-center gap-6">
+                <a href="#" aria-label="Search" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-search"></i></a>
+                <a href="#" aria-label="Favorites" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-heart"></i></a>
+                <a href="#" aria-label="Cart" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
+            </div>
+</header>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-7xl mx-auto p-3 sm:p-4 pt-6 sm:pt-10 flex-grow">
+      <section class="flex flex-col items-center animate-fadeIn">
+        <div class="complaint-card bg-white p-4 sm:p-8 rounded-xl border border-pink-300 glow-effect w-full max-w-2xl shadow-lg">
+          <div 
+            class="flex items-center space-x-2 text-gray-500 hover:text-pink-500 transition-colors duration-300 cursor-pointer mb-4 sm:mb-6"
+            onclick="window.location.href='ClaimOptions.html'"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12 19-7-7 7-7"></path>
+              <path d="M19 12H5"></path>
+            </svg>
+            <span>Back</span>
+          </div>
+          
+          <h2 class="text-xl sm:text-2xl font-bold text-gradient mb-4 sm:mb-6">
+            File a Complaint
+          </h2>
+          
+          <form class="space-y-4 sm:space-y-6" id="complaintForm">
+            <!-- Full Name -->
+            <div>
+              <label for="fullName" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Full Name:
+              </label>
+              <input 
+                type="text" 
+                id="fullName" 
+                placeholder="Enter your name" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700"
+              />
+            </div>
+            
+            <!-- Complaint Type -->
+            <div>
+              <label for="complaintType" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Category/Type of Complaint:
+              </label>
+              <select 
+                id="complaintType" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700"
+              >
+                <option>Product Issue</option>
+                <option>Delivery Delay</option>
+                <option>Billing Error</option>
+                <option>Other</option>
+              </select>
+            </div>
+            
+            <!-- Email Address -->
+            <div>
+              <label for="email" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Email Address:
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                placeholder="Enter your email" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700"
+              />
+            </div>
+            
+            <!-- Order Number -->
+            <div>
+              <label for="orderNumber" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Order Number (if applicable):
+              </label>
+              <input 
+                type="text" 
+                id="orderNumber" 
+                placeholder="Enter order number" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700"
+              />
+            </div>
+            
+            <!-- Date of Incident -->
+            <div>
+              <label for="incidentDate" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Date of Incident:
+              </label>
+              <input 
+                type="date" 
+                id="incidentDate" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700"
+              />
+            </div>
+            
+            <!-- Phone Number -->
+            <div>
+              <label for="phone" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Phone Number (optional):
+              </label>
+              <input 
+                type="tel" 
+                id="phone" 
+                placeholder="Enter phone number" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700"
+              />
+            </div>
+            
+            <!-- Complaint Details -->
+            <div>
+              <label for="complaintDetails" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Complaint Details:
+              </label>
+              <textarea 
+                id="complaintDetails" 
+                placeholder="Describe your complaint" 
+                class="w-full p-2 sm:p-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent text-gray-700 min-h-[100px] sm:min-h-[120px]"
+              ></textarea>
+            </div>
+            
+            <!-- Attachments -->
+            <div>
+              <label for="attachments" class="block text-gray-700 font-medium mb-1 sm:mb-2">
+                Attachments (optional):
+              </label>
+              <div class="relative">
+                <input 
+                  type="file" 
+                  id="attachments" 
+                  class="opacity-0 absolute inset-0 w-full cursor-pointer"
+                />
+                <div class="w-full p-2 sm:p-3 bg-gray-50 border border-dashed border-gray-400 rounded-lg text-gray-500 text-center">
+                  Drop files here or click to browse
+                </div>
+              </div>
+            </div>
+            
+            <!-- Buttons -->
+            <div class="flex justify-between pt-2 sm:pt-4">
+              <button 
+                type="button" 
+                class="px-4 sm:px-6 py-2 sm:py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors duration-300"
+                onclick="window.location.href='ClaimOptions.html'"
+              >
+                Cancel
+              </button>
+              <button 
+                type="submit" 
+                class="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-lg hover:from-pink-600 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-pink-300/30 flex items-center space-x-2 hover-glow"
+              >
+                <span>Submit</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m22 2-7 20-4-9-9-4Z"></path>
+                  <path d="M22 2 11 13"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Popup -->
+    <div id="popup" class="fixed inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-50 hidden">
+      <div class="bg-white p-4 sm:p-8 rounded-xl border border-pink-300 glow-effect max-w-md w-[90%] sm:w-full text-center transform transition-all animate-fadeIn shadow-xl">
+        <div class="w-12 h-12 sm:w-16 sm:h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-pink-500 sm:w-8 sm:h-8">
+            <path d="m22 2-7 20-4-9-9-4Z"></path>
+            <path d="M22 2 11 13"></path>
+          </svg>
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold mb-1 sm:mb-2 text-pink-500">Submission Received</h3>
+        <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">
+          We've received your complaint and our team will review it shortly. You'll receive a confirmation email with tracking details.
+        </p>
+        <button 
+          onclick="closePopup()"
+          class="px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-lg hover:from-pink-600 hover:to-pink-500 transition-all duration-300 shadow-lg hover:shadow-pink-300/30 hover-glow"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Form submission and popup
+      document.getElementById('complaintForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('popup').classList.remove('hidden');
+      });
+      
+      function closePopup() {
+        document.getElementById('popup').classList.add('hidden');
+        window.location.href = 'ClaimOptions.html';
+      }
+
+      // Handle viewport height for mobile browsers
+      function setVH() {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
+      
+      // Set initial height
+      setVH();
+      
+      // Reset on resize and orientation change
+      window.addEventListener('resize', setVH);
+      window.addEventListener('orientationchange', setVH);
+    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Why Choose us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Project management</a></li>
+                    <li><a href="#">Time tracker</a></li>
+                    <li><a href="#">Time schedule</a></li>
+                    <li><a href="#">Lead generate</a></li>
+                    <li><a href="#">Remote Collaboration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h2>Aura</h2>
+                <h4>Subscribe to our Newsletter</h4>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your Email">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+  </body>
+</html>

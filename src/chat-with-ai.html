@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/public/style2.css">
+    <link rel="stylesheet" href="/public/styles.css">
+    <style>
+        /* Chat-specific styles */
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid #fbcfe8;
+            border-radius: 12px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            background-color: #f9fafb;
+            padding: 1.5rem;
+            border-bottom: 1px solid #fbcfe8;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .chat-header h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ec4899;
+        }
+
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background-color: #f9fafb;
+        }
+
+        .chat-message {
+            margin-bottom: 1rem;
+            max-width: 70%;
+            padding: 0.75rem 1rem;
+            border-radius: 12px;
+        }
+
+        .chat-message.ai-message {
+            background-color: #fff;
+            border: 1px solid #fbcfe8;
+            margin-right: auto;
+        }
+
+        .chat-message.user-message {
+            background-color: #ec4899;
+            color: #fff;
+            margin-left: auto;
+        }
+
+        .chat-input {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            border-top: 1px solid #fbcfe8;
+            background-color: #fff;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #fbcfe8;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .chat-input button {
+            padding: 0.75rem 1.5rem;
+            background-color: #ec4899;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .chat-input button:hover {
+            background-color: #db2777;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+   <!-- Navbar -->
+   <header class="header">
+    <div class="header-content">
+        <div class="logo">
+            <img src="/images/Aura.png" alt="Aura Logo">
+        </div>
+        
+        <!-- Updated Navigation Menu for both pages -->
+            <nav class="nav-menu">
+                <ul class="flex gap-10">
+                    <li><a href="index.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Home</a></li>
+                    <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Categories</a></li>
+                    <li><a href="ClaimOptions.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Contact </a > </li>
+                    <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Commands</a></li>
+                </ul>
+            </nav>
+
+            <!-- Updated Header Icons -->
+            <div class="flex items-center gap-6">
+                <a href="#" aria-label="Search" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-search"></i></a>
+                <a href="#" aria-label="Favorites" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-heart"></i></a>
+                <a href="#" aria-label="Cart" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
+            </div>
+</header>
+
+    <!-- Chat Container -->
+    <main class="w-full max-w-7xl mx-auto p-3 sm:p-4 pt-6 sm:pt-10 flex-grow">
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>Chat with AI</h1>
+            </div>
+
+            <div class="chat-box" id="chat-box">
+                <!-- AI Message -->
+                <div class="chat-message ai-message">
+                    <p>Hello! How can I assist you today?</p>
+                </div>
+
+                <!-- User Message -->
+                <div class="chat-message user-message">
+                    <p>Tell me about your services.</p>
+                </div>
+
+                <!-- AI Message -->
+                <div class="chat-message ai-message">
+                    <p>We offer various AI-powered solutions. How can I help you with that?</p>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="chat-input" placeholder="Type your message..." />
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Why Choose us</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Testimonial</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Condition</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Product</h3>
+                <ul>
+                    <li><a href="#">Project management</a></li>
+                    <li><a href="#">Time tracker</a></li>
+                    <li><a href="#">Time schedule</a></li>
+                    <li><a href="#">Lead generate</a></li>
+                    <li><a href="#">Remote Collaboration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section newsletter">
+                <h2>Aura</h2>
+                <h4>Subscribe to our Newsletter</h4>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter your Email">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Chat Interaction -->
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        // Function to add a message to the chat box
+        function addMessage(message, isUser) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('chat-message');
+            messageDiv.classList.add(isUser ? 'user-message' : 'ai-message');
+            messageDiv.innerHTML = `<p>${message}</p>`;
+            chatBox.appendChild(messageDiv);
+            chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom
+        }
+
+        // Send button click event
+        sendBtn.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true); // Add user message
+                chatInput.value = ''; // Clear input
+
+                // Simulate AI response after 1 second
+                setTimeout(() => {
+                    addMessage("This is a sample AI response.", false); // Add AI message
+                }, 1000);
+            }
+        });
+
+        // Allow pressing Enter to send a message
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>
