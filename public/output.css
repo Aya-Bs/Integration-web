@@ -735,16 +735,16 @@ video {
   height: 2rem;
 }
 
+.h-\[60px\] {
+  height: 60px;
+}
+
 .h-\[85px\] {
   height: 85px;
 }
 
 .h-auto {
   height: auto;
-}
-
-.h-button {
-  height: 85px;
 }
 
 .h-full {
@@ -803,11 +803,11 @@ video {
   width: 2rem;
 }
 
-.w-\[348px\] {
-  width: 348px;
+.w-\[300px\] {
+  width: 300px;
 }
 
-.w-button {
+.w-\[348px\] {
   width: 348px;
 }
 
@@ -887,6 +887,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -1076,6 +1080,11 @@ video {
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .object-left {

@@ -187,8 +187,7 @@
     </style>
   </head>
   <body class="bg-white text-gray-800">
-     <!-- Navbar -->
-     <!-- Navbar -->
+     
     <header class="header">
         <div class="header-content">
             <div class="logo">
@@ -213,7 +212,23 @@
                     <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
                 </div>
     </header>
-
+    <script>
+      // Mobile menu toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+          const mobileMenuButton = document.getElementById('mobile-menu-button');
+          const mobileMenu = document.getElementById('mobile-menu');
+          
+          if (mobileMenuButton && mobileMenu) {
+              mobileMenuButton.addEventListener('click', function() {
+                  if (mobileMenu.style.display === 'block') {
+                      mobileMenu.style.display = 'none';
+                  } else {
+                      mobileMenu.style.display = 'block';
+                  }
+              });
+          }
+      });
+  </script>
     <!-- Main Content -->
     <main class="w-full max-w-7xl mx-auto p-3 sm:p-4 pt-6 sm:pt-10 flex-grow">
       <section class="flex flex-col items-center animate-fadeIn">

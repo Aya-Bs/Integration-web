@@ -3,39 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura - Home</title>
+    <title>Aura - Coffee Cups</title>
     <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="/public/style2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700&family=Inria+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/public/style2.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/styles.css">
+    
+    <style>
+        /* Fix navigation spacing */
+        .header {
+            background-color: white;
+            border-bottom: 1px solid #464B8A;
+            padding: 0.5rem 0;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            width: 80px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        .nav-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem; /* Increased spacing between items */
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #464B8A;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-family: 'Inknut Antiqua', serif !important;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: #2d3158;
+        }
+        
+        .header-icons {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        
+        .header-icons a {
+            color: #464B8A;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .header-icons a:hover {
+            color: #2d3158;
+        }
+        
+        /* Mobile menu styles */
+        #mobile-menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: #464B8A;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        #mobile-menu {
+            display: none;
+            padding: 1rem;
+            background-color: white;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        #mobile-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #mobile-menu li {
+            margin-bottom: 0.75rem;
+        }
+        
+        #mobile-menu a {
+            text-decoration: none;
+            color: #464B8A;
+            font-family: inherit; /* Use the same font as the main navigation */
+            font-size: 1rem;
+            font-weight: 500;
+            display: block;
+            padding: 0.5rem 0;
+            font-family: 'Inknut Antiqua', serif !important;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none !important;
+            }
+            
+            #mobile-menu-button {
+                display: block;
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            #mobile-menu-button {
+                display: block;
+            }
+            
+            .header-content {
+                justify-content: space-between;
+            }
+            
+            .logo {
+                width: 60px;
+            }
+            
+            .header-icons {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="font-inknut">
-    <!-- Navbar -->
+<body class="font-sans">
+    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <div class="logo">
                 <img src="/images/Aura.png" alt="Aura Logo">
             </div>
             
+<<<<<<< HEAD
+            <!-- Mobile menu button (hidden on desktop) -->
+            <button id="mobile-menu-button" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="ClaimOptions.html">Contact</a></li>
+                    <li><a href="Commands.html">Commands</a></li>
+                </ul>
+            </nav>
+=======
             <!-- Updated Navigation Menu for both pages -->
                 <nav class="nav-menu">
                     <ul class="flex gap-10">
                         <li><a href="index.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Home</a></li>
                         <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Categories</a></li>
                         <li><a href="ClaimOptions.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Contact </a > </li>
-                        <li><a href="#" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Commands</a></li>
+                        <li><a href="Commands.html" class="text-[#464B8A] hover:text-[#2d3158] font-inknut text-base font-medium transition-colors">Commands</a></li>
                     </ul>
                 </nav>
+>>>>>>> f12b495fc27e77bf32f36f8bf5fce5c6fbdb4266
 
-                <!-- Updated Header Icons -->
-                <div class="flex items-center gap-6">
-                    <a href="#" aria-label="Search" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-search"></i></a>
-                    <a href="#" aria-label="Favorites" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-heart"></i></a>
-                    <a href="#" aria-label="Cart" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-shopping-cart"></i></a>
-                    <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
-                </div>
+            <div class="header-icons">
+                <a href="#" aria-label="Search"><i class="fas fa-search"></i></a>
+                <a href="#" aria-label="Favorites"><i class="fas fa-heart"></i></a>
+                <a href="#" aria-label="Cart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" aria-label="Profile"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+        
+        <!-- Mobile menu (hidden by default) -->
+        <div id="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Categories</a></li>
+                <li><a href="ClaimOptions.html">Contact</a></li>
+                <li><a href="Commands.html">Commands</a></li>
+            </ul>
+        </div>
     </header>
+
+    <!-- Rest of your page content goes here -->
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    if (mobileMenu.style.display === 'block') {
+                        mobileMenu.style.display = 'none';
+                    } else {
+                        mobileMenu.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
 
 <!-- Hero Section -->
 <section class="relative h-screen overflow-hidden">
@@ -62,16 +246,15 @@
             </h1>
             
             <p class="font-['Inria_Sans'] text-[#434C7B] text-xl text-center max-w-md">
-                Personalize your products,<br>for the best prices
+                Personnalise your products,<br>for the best prices
             </p>
-        
-            <!-- Corrected Button with Navigation -->
             <a href="product.html">
-                <button class="bg-[#1F2544] text-white font-['Inknut_Antiqua'] text-lg px-10 py-4 rounded-full hover:bg-opacity-90 transition-all">
-                    Personalize
-                </button>
-            </a>
+            <button class="bg-[#1F2544] text-white font-['Inknut_Antiqua'] text-lg px-10 py-4 rounded-full hover:bg-opacity-90 transition-all" >
+                Personnalise
+            </button>
+        </a>
         </div>
+    </div>
 </section>
     
     <!-- Search Section -->

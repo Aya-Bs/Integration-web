@@ -40,50 +40,74 @@
                 <a href="#" aria-label="Profile" class="text-[#464B8A] hover:text-[#2d3158] transition-colors"><i class="fas fa-user"></i></a>
             </div>
 </header>
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+          mobileMenuButton.addEventListener('click', function() {
+              if (mobileMenu.style.display === 'block') {
+                  mobileMenu.style.display = 'none';
+              } else {
+                  mobileMenu.style.display = 'block';
+              }
+          });
+      }
+  });
+</script>
 
-    
-  <div class="max-w-6xl mx-auto px-4 py-8">
-    <!-- Header with avatar and creator info -->
-    <div class="flex justify-center mb-6">
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <!-- Header with avatar and creator info -->
+  <div class="flex justify-start mb-6">
       <div class="flex items-center">
-        <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mr-2">
-          <div class="w-8 h-8 border-2 border-white rounded-full"></div>
-        </div>
-        <div class="border border-gray-300 rounded-full py-2 px-8">
-          <p class="text-navy-light text-center">
-            Created by <span class="font-semibold">Foulen Ben Foulen</span>
-            <br />
-            <span class="text-sm">Rated 4.1 by community</span>
-          </p>
-        </div>
+          <!-- Avatar -->
+          <div class="w-16 h-16 bg-navy rounded-full flex items-center justify-center mr-2">
+              <div class="w-8 h-8 rounded-full overflow-hidden">
+                  <img src="person_24dp_D9D9D9_FILL0_wght400_GRAD0_opsz24.png" alt="User Icon" class="w-full h-full object-cover">
+              </div>
+          </div>
+          <!-- Creator Info -->
+          <div class="border border-gray-300 rounded-full py-2 px-8">
+              <p class="text-navy-light">
+                  Created by <span class="font-semibold">Foulen Ben Foulen</span>
+                  <br />
+                  <span class="text-sm">Rated 4.1 by community</span>
+              </p>
+          </div>
       </div>
-    </div>
+  </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <!-- Product Image -->
       <div class="border border-gray-200 rounded-lg p-4 flex items-center justify-center">
-        <img 
-          src="image.jpg" 
-          alt="Checkered Ceramic Cup" 
-          class="object-contain max-w-full h-auto"
-        />
+          <img 
+              src="/images/checkered-cup.png" 
+              alt="Checkered Ceramic Cup" 
+              class="object-contain max-w-full h-auto"
+          />
       </div>
+ 
 
-      <!-- Product Info -->
-      <div class="flex flex-col">
-        <h1 class="font-inknut text-3xl text-center mb-2">Checkered Ceramic Cup</h1>
-        <p class="text-3xl font-bold text-center mb-8">29,990 DT</p>
-        
-        <!-- Buttons -->
-        <div class="flex flex-col gap-6 mb-16">
-            <button onclick="window.location.href='PagePayement.html'" class="w-button h-button bg-navy-light text-white rounded-2xl text-2xl font-semibold hover:bg-navy-light/90 transition-colors">
-                Buy
-          </button>
-          <button class="w-button h-button bg-navy-light text-white rounded-2xl text-2xl font-semibold hover:bg-navy-light/90 transition-colors">
-            Personnalise
+     <!-- Product Info -->
+<div class="flex flex-col items-center">
+  <h1 class="font-inknut text-3xl text-center mb-2">Checkered Ceramic Cup</h1>
+  <p class="text-3xl font-bold text-center mb-8">29,990 DT</p>
 
-          </button>
-        </div>
+  <!-- Buttons -->
+  <div class="flex flex-col gap-6 mb-16 items-center">
+    <div class="flex flex-col gap-4 mb-12 items-center">
+      <button onclick="window.location.href='PagePayement.html'" class="w-[300px] h-[60px] bg-navy-light text-white rounded-xl text-xl font-semibold hover:bg-navy-light/90 transition-colors">
+          Buy
+      </button>
+      <button class="w-[300px] h-[60px] bg-navy-light text-white rounded-xl text-xl font-semibold hover:bg-navy-light/90 transition-colors">
+          Personnalise
+      </button>
+  </div>
+  </div>
+
+
         <!-- Product Description -->
         <div class="mb-8">
           <h2 class="text-2xl font-semibold mb-2">Product Description</h2>
